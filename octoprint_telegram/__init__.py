@@ -1013,7 +1013,7 @@ class TelegramPlugin(octoprint.plugin.EventHandlerPlugin,
 				files = {'photo':("image.jpg", image_data)}
 				if message is not "":
 					data['caption'] = message
-				r = requests.post(self.bot_url + "/sendPhoto", files=files, data=data)
+				r = requests.post(self.bot_url + "/sendDocument", files=files, data=data)
 				self._logger.debug("Sending finished. " + str(r.status_code))
 			else:
 				self._logger.debug("Sending without image.. " + str(chatID))
